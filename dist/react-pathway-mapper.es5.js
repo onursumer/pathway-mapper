@@ -8920,10 +8920,9 @@ function () {
       var cellVerticalPadding = 8;
       var universalShapes = ruleset.getUniversalShapes(cellWidth, cellHeight);
       var specificShapesPerDatum = ruleset.getSpecificShapesForDatum(genomicData.geneticTrackData, cellWidth, cellHeight);
-      var shapesPerDatum = specificShapesPerDatum.map(function (shapes) {
-        return universalShapes.concat(shapes);
-      }); // _.fill(Array(shapesPerDatum.length), universalShapes)
-
+      var shapesPerDatum = specificShapesPerDatum.map(function (specificShapes) {
+        return universalShapes.concat(specificShapes);
+      });
       shapesPerDatum.forEach(function (shapes, index) {
         var offsetX = index * (cellWidth + cellPadding); // width + padding
 
